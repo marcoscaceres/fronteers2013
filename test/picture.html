@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Picturefill</title>
+		<script src="http://scottjehl.github.io/picturefill/external/matchmedia.js"></script>
+		<script src="http://scottjehl.github.io/picturefill/picturefill.js"></script>
+		<style>
+			body { font-family: sans-serif }
+			img {  max-width: 100% }
+		</style>
+	</head>
+	<body>
+		
+<h1>Test</h1>
+<div data-picture data-alt="Microsoft" class="mscom-logo">
+                <span data-src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-1x.png"></span>
+                <span data-src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-2x.png" data-media="(min-device-pixel-ratio: 2.0)"></span>
+                <span data-src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-sm-1x.png" data-media="(max-width: 539px)"></span>
+                <span data-src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-sm-2x.png" data-media="(max-width: 539px) and (min-device-pixel-ratio: 2.0)"></span>
+                <noscript><img src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-1x.png" alt="Microsoft" /></noscript>
+            </div>
+
+		<h1>Picturefill: A &lt;picture&gt; element polyfill</h1>
+				
+		<p>For more info: <a href="http://github.com/scottjehl/picturefill">see project home.</a></p>
+		
+		<span data-picture data-alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+			<span data-src="http://scottjehl.github.io/picturefill/external/imgs/small.jpg"></span>
+			<span data-src="http://scottjehl.github.io/picturefill/external/imgs/medium.jpg" data-media="(min-width: 400px)"></span>
+			<span data-src="http://scottjehl.github.io/picturefill/external/imgs/large.jpg" data-media="(min-width: 800px)"></span>
+			<span data-src="http://scottjehl.github.io/picturefill/external/imgs/extralarge.jpg" data-media="(min-width: 1000px)"></span>
+
+			<!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+			<noscript><img src="http://scottjehl.github.io/picturefill/external/imgs/small.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia"></noscript>
+		</span>
+		<img src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-1x.png">
+		<img src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-1x.png?a">
+		<img src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-1x.png?b">
+		<img src="http://i.s-microsoft.com/global/ImageStore/PublishingImages/logos/hp/logo-lg-1x.png?a">
+	</body>
+</html>
