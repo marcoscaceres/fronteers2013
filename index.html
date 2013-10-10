@@ -29,20 +29,26 @@
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
 		<style>
-		.blackboard, .blackboard h2, .blackboard pre{
-			color: white !important;
-			font-family: "Comic Sans MS" !important;
-		}
+		@media screen{
+			.blackboard, .blackboard h2, .blackboard pre{
+				color: white !important;
+				font-family: "Comic Sans MS" !important;
+			}
 
-		 .blackboard pre{
-			font-size: 1em;
-			line-height: 1.3em;
-		 }
+			 .blackboard pre{
+				font-size: 1em;
+				line-height: 1.3em;
+			 }
 
-		 .white{
-			color: white !important;
-			background-color: rgba(0,0,0, 0.6);
-			padding: 1.5em !important;
+			 .white{
+				color: white !important;
+				background-color: rgba(0,0,0, 0.6);
+				padding: 1.5em !important;
+			 }
+
+			 .bsod{
+			 	font-family: 'Lucida Console' !important;
+			 }
 		 }
 		</style>
 
@@ -59,14 +65,28 @@
 						<a href="http://marcosc.com">Marcos Cáceres</a> / <a href="http://twitter.com/marcosc">@marcosc</a>
 					</p>
 				</section>
+				<section data-background="images/fxos.png" data-background-size="800px">
+				
+				<aside class="notes">
+					<ul class="fragment white">
+						<li>Platform Architect - Mozilla</li>
+						<li>I'm part of the Web API team.</li> 
+						<li>We try to standardize Firefox OS API at W3C.</li>
+						<li>Over the last year or so, been involved in W3C RICG.</li>
+						<li>
+							Lead editor of usecase and picture spec
+						</li>
+						<li>
+							Responsive images are important to Mozilla.
+						</li>
+						<li>
+							Our target market is developing countries. 
+						</li>
+						<li>Developing countries, where poeple don't have much money and access to the internet is expensive.</li>
+					</ul>
+				</aside> 
 
-				<section>
-					<h1>Oh, hai!</h1>
-					<aside>
-						
-					</aside>
 				</section>
-
 				<section>
 					<h2>Are we there yet? <br> 
 						<span class="fragment">no... but close... 
@@ -75,11 +95,17 @@
 				</section>
 				<section>
 					<h2>Who cares?</h2>
+					<aside class="notes">
+					<ul>
+						<li>Bandwidth + computing power</li>
+						<li>Can't we just use what we have?</li>
+					</ul>
+					</aside>
 				</section>
 
 				<section data-background="images/RICG_members.png">
 					<h1 style="color: black;
-					background-color: white"> We do! </h1>
+					background-color: rgba(255,255,255, .8); "> We do! </h1>
 				</section>
 
 				<section data-background="images/responsiveimages.org.jpg">
@@ -87,35 +113,50 @@
 					<h2><a href="http://responsiveimages.org">responsiveimages.org</a></h2>
 					<aside class="notes">
 						<ul>
-						<li>Largest Community Group at the W3C.</li>
+							<li>Largest Community Group at the W3C.</li>
+							<li>Over 300 members.</li>
 						</ul>
 					</aside>
 				</section>
 
 				<section>
 					<h2>Why do we care?</h2>
-					<dl>
-						<dt>Mat Marquis</dt>
-							<dd>...</dd>
-						<dt>Steve Souders</dt>
-							<dd>Images constitute +60%.</dd>
-					</dl>
 				</section>
 				
+                <section>
+                    <h2>Images - over 60% of a page</h2>
+                    <p><img src="images/httparchive_images.png" style="width: 80%"></p>
+                    <p><small><a href="http://httparchive.org">httparchive.org</a></small></p>
+                </section>
+
+                <section>
+				    <h2>The RWD conspiracy?</h2>
+                    <p><img src="images/trend-page-size-small-vs-big.png" height=300px></p>
+                    <p><small><a href="http://www.guypo.com/uncategorized/real-world-rwd-performance-take-2/">Guy Podjarny</a></small></p>
+                    <h3>72% same resources</h3>
+                    <aside class="notes">
+                        <p>Hurts performance.</p>
+                        <p>Wastes data.</p>
+                    </aside>
+                </section>
+				
 				<section>
-					<p><img src="images/roaming.png" alt=""></p>
+					<h2>First world problems...</h2>
+					<p><img src="images/roaming_detailed.png" alt="I get charged €0.50/100k"></p>
 				</section>
 
 				<section>
 					<p><img src="images/caps_details.png" alt="EU87.88 in charges, for 200MB FFFUUU!!!"></p>
 				</section>
+
 				<section>
 					<h2>What are <br> responsive&nbsp;images?</h2>
 					<blockquote>Images (co)respond to the environment.</blockquote>
 				</section>
+
 				<section>
 					<h2>Use Cases</h2>
-					<aside>
+					<aside class="notes">
 						<ul>
 							<li>What we see in "the wild".</li>
 						</ul>
@@ -126,20 +167,80 @@
 					<h2>Stretchy images</h2>
 					<img src="images/stretchy_images.png" alt="">
 				</section>
+				
+				<section>
+					<h2>Fitting different viewports</h2>
+					<figure>
+					<img src="images/imagegrid.png" alt="multicoloum responsive layout">
+					<figcaption>
+						<small><cite>
+							<a href="http://24ways.org/2012/responsive-images-what-we-thought-we-needed/">Responsive Images: What We Thought We Needed</a>, 
+by <a href="http://paulrobertlloyd.com/">Paul Robert Lloyd</a></cite></small>
+					</figcaption>
+					</figure> 
+				</section>
 			
 				<section>
 					<h2>Device Pixel Ratio</h2>
-					<img src="images/stretchy_images.png" alt="">
+					<img src="images/dpr_selection.jpg" alt="devices have a range of different DPI.">
+					<p>Device pixel ratio is the ratio between CSS pixels and physical pixels.</p>
+				</section>
+
+				<section
+					data-background-size="800px"
+					data-background-color="white"
+				  	data-background-image="images/retina-display-vs-normal-display1.png">
 				</section>
 
 				<section>
-					<h2>Viewport selection</h2>
+					<h2>Viewport matching</h2>
+					<img src="images/viewport_selection.jpg" alt="similarly, devices have a range of different widths">
+				</section>
+
+				<section>
+					<h2>Matching to portrait</h2>
+					<img src="images/viewport_portrait.png">
+				</section>
+
+				<section>
+					<h2>Switching to landscape</h2>
+					<img src="images/viewport_landscape.png">
 				</section>
 				
 				<section>
-					<h2>Art Direction</h2>
-					<img src="images/art-direction.png">
+					<h2>Art direction <span class="fragment">- crop</span></h2>
+					<img src="images/art-direction.jpg" alt="you can show different crops of the same image, or a different image altogether">
 				</section>
+
+
+				<section>
+					<h2>Art direction - swap</h2>
+					<figure>
+						<video controls poster="videos/screenrmx1.jpg" width="652" height=
+						"389" onclick="if(/Android/.test(navigator.userAgent))this.play();">
+						<source src="videos/screenrmx1.m4v" type="video/mp4">
+						<source src="videos/screenrmx1.webm" type="video/webm">
+						<source src="videos/screenrmx1.ogv" type="video/ogg">
+						<source src="videos/screenrmx1.mp4"><object type=
+						"application/x-shockwave-flash" data="videos/flashfox.swf" width=
+						"652" height="389" style="position:relative;">
+						<param name="movie" value="videos/flashfox.swf">
+						<param name="allowFullScreen" value="true">
+						<param name="flashVars" value=
+						"autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v">
+						<embed src="videos/flashfox.swf" width="652" height="389" style=
+						"position:relative;" flashvars=
+						"autoplay=false&amp;controls=true&amp;fullScreenEnabled=true&amp;loop=false&amp;poster=videos/screenrmx1.jpg&amp;src=screenrmx1.m4v"
+						allowfullscreen="true" wmode="transparent" type=
+						"application/x-shockwave-flash" pluginspage=
+						"http://www.adobe.com/go/getflashplayer_en"> <img alt=
+						"Responsive images on Meego website" src="videos/screenrmx1.jpg"
+						style="position:absolute;left:0;" width="652" height="389" title=
+						"Video playback is not supported by your browser">
+						</object></video>
+        			</figure>
+				</section>
+
 
 				<section>
 					<h2>Other use cases</h2>
@@ -149,25 +250,22 @@
 					</ul>
 				</section>
 
-				<section data-background="images/usecases.png">
-					<h2><a href="http://usecases.responsiveimages.org/">usecases.responsiveimages.org</a></h2>
+				<section data-background="images/usecases.png"
+						 data-background-size="80%"
+						 data-background-color="white">
+	
 				</section>
 
 				<section data-background="images/glass_ceiling.jpg">
 					<div class="white">
 						<h2 style="color: white">The developer's glass ceiling</h2>
-						<ul class="notes">
+						<ul class="notes fragment">
 							<li>Reliance on divs.</li>
-							<li>Bypass preload scanner</li>
-							<li>Reliance on server-side.</li>
+							<li>Bypass preload scanner.</li>
+							<li>Reliance on server-side technologies.</li>
 						</ul>
 					</div>
 				</section>
-
-				<section data-background="images/can_we_have_picture.jpg">
-
-				</section>
-
 				<section> 
 					<h2>Quick example: picturefill</h2>
 				</section>
@@ -184,7 +282,7 @@
 <pre><code>&lt;div data-picture data-alt="Microsoft">
   &lt;div data-src="logo-type-1x.png">&lt;/div>
   &lt;div data-src="logo-type-2x.png" 
-          data-media="(min-device-pixel-ratio: 2.0)">
+       data-media="(min-device-pixel-ratio: 2.0)">
   &lt;/div>
   &lt;noscript>
     &lt;img src="logo-type-1x.png" alt="Microsoft" />
@@ -195,97 +293,174 @@
 				
 				<section>
 				<h2>Pre-fetching<h2>
-
-				<img src="images/image-loading.png" alt="the preload scanner can't work with divs">
-
+				<img src="images/preload_scanner.png" alt="the preload scanner can't work with divs">
 				</section>
-		
+
+				<section>
+				  <h2>Without script</h2>
+					<img src="images/no_script.png" alt="the preload scanner can't work with divs">
+				</section>
+					
+				<section>
+					<h2>Hacking around problem</h2>
+					<pre><code>
+&lt;script type="text/javascript"&gt;
+  window.picturePolyfill.resolveLast();
+&lt;/script&gt;
+					</code></pre>
+				</section>
+
+                <section>
+<h2>Final code</h2>
+<pre><code>&lt;div data-picture data-alt="Microsoft" class="mscom-logo">
+    &lt;div data-src="logo-lg-1x.png">&lt;/div>
+    &lt;div data-src="logo-lg-2x.png" data-media="(min-device-pixel-ratio: 2.0)">&lt;/div>
+    &lt;div data-src="logo-sm-1x.png" 
+         data-media="(max-width: 539px)">&lt;/div>
+    &lt;div data-src="logo-sm-2x.png" 
+         data-media="(max-width: 539px) and (min-device-pixel-ratio: 2.0)">&lt;/div>
+    &lt;noscript>&lt;img src="logo-lg-1x.png" alt="Microsoft" />&lt;/noscript>
+&lt;/div>
+&lt;script>window.picturePolyfill.resolveLast();&lt;/script>
+</pre></code>
+					</script>
+				</section>
+
+				<section data-background="images/glass_ceiling.jpg">
+					<h2 class="white">What's a developer to do?</h2>
+				</section>
+				
+				<section data-background="images/can_we_have_picture.jpg">
+					
+				</section>
+
 				<section>
 					<h2>Proposed solutions</h2>
-					<ul>
-						<li>srcset</li>
-						<li>picture</li>
-						<li>Client Hints</li>
-						<li>Respimg syntax</li>
-						<li>Responsive Image Container</li>
-					</ul>
 				</section>
 
-				<section data-background="images/good_bad_ugly.png">
+				<section
+					data-background-size="800px"
+					data-background-color="white"
+				 data-background="images/good_bad_ugly.png">
 		
 	
 				</section>
 
 				<section>
-					
-					<h2>
-						<code>
-						&lt;img src width height alt &gt;
-						</code>
-					</h2>
+					<h2>The <code>&lt;picture&gt;</code> Element</h2>
+				</section>
 
+                <section data-markdown>
+                    <script type="text/template">
+                        ### Example
+
+                         ```
+                        <picture width="300" height="300">
+                            <source media="screen and (min-width:400px)"
+                                    srcset="narrow1x.jpg 1x, 
+                                            narrow2x.jpg 2x"> 
+
+                            <source srcset="tiny1x.jpg 1x, 
+                                            tiny2x.jpg 2x"> 
+
+                            <img src="fallback.jpg">
+                        </picture>
+                         ```
+                    </script>
+                </section>
+
+				<section>
+					<h2>The good</h2>
+					<ul>
+						<li>Covers the use cases.</li>
+						<li>Dev's "get it"</li>
+					</ul>
 				</section>
 
 				<section>
-					<h2><code>&lt;img src="some/image"&gt;</code></h2>
-					<aside class="notes">
-						<ul>
-							<li>Often attributed to Bruce Lawson</li>
-							<li>Follows the pattern from video
-								and audio elements.
-							</li>
-						</ul>
-					</aside>
+					<h2>The bad</h2>
+					<ul>
+						<li>Multiple elements.</li>
+						<li>Extends source element (or special cases it)</li>
+						<li>Mixes media queries in the markup.</li>
+					</ul>					
 				</section>
 
+				<section>
+					<h2>The ugly</h2>
+					<img src="images/imagegrid.png" alt="multicoloum responsive layout">					
+				</section>
 
+				<section data-background-color="rgb(0,0,128)" class="bsod">
+					<p><span style="font-size: .5em; background-color: rgb(184,184,184); color: rgb(0,0,128); 
+						padding: .3em 2em">Picture 95</span></p>
+					<pre style="color: white; border: 0; font-size: .5em">
+&lt;picture&gt;
+    &lt;!-- This source element covers the range 320-400, so the midpoint is 360, and that's what I'm using to calculate the x values, e.g. 320/360=0.89; similarly below --&gt;
+    &lt;source media=&quot;(max-width: 400px)&quot; srcset=&quot;160.jpg 0.44x, 320.jpg 0.89x, 480.jpg 1.33x, 640.jpg 1.78x, 960.jpg 2.67x&quot;&gt;
+    &lt;source media=&quot;(max-width: 520px)&quot; srcset=&quot;160.jpg 0.35x, 320.jpg 0.7x, 480.jpg 1.04x, 640.jpg 1.39x, 960.jpg 2.09x, 1280.jpg 2.78x&quot;&gt;
+    &lt;source media=&quot;(max-width: 639px)&quot; srcset=&quot;320.jpg 0.55x, 480.jpg 0.83x, 640.jpg 1.1x, 960.jpg 1.66x, 1280 2.2x, 1920 3.31x&quot;&gt;
+    &lt;!-- Note that in the next 2 source elements, images are only half the viewport width --&gt;
+    &lt;source media=&quot;(max-width: 800px)&quot; srcset=&quot;160.jpg 0.44x, 320.jpg 0.89x, 480.jpg 1.33x, 640.jpg 1.78x, 960.jpg 2.67x&quot;&gt;
+    &lt;source media=&quot;(max-width: 959px)&quot; srcset=&quot;160.jpg 0.36x, 320.jpg 0.73x, 480.jpg 1.09x, 640.jpg 1.45x, 960.jpg 2.18x, 1280.jpg 2.91x&quot;&gt;
+    &lt;!-- And in the next 4, images are only 1/3 of the viewport width --&gt;
+    &lt;source media=&quot;(max-width: 1200px)&quot; srcset=&quot;160.jpg 0.44x, 320.jpg 0.89x, 480.jpg 1.33x, 640.jpg 1.78x, 960.jpg 2.67x&quot;&gt;
+    &lt;source media=&quot;(max-width: 1440px)&quot; srcset=&quot;160.jpg 0.36x, 320.jpg 0.73x, 480.jpg 1.09x, 640.jpg 1.45x, 960.jpg 2.18x, 1280.jpg 2.91x&quot;&gt;
+    &lt;source media=&quot;(max-width: 1920px)&quot; srcset=&quot;320.jpg 0.57x, 480.jpg 0.86x, 640.jpg 1.14x, 960.jpg 1.71x, 1280 2.29x, 1920 3.43x&quot;&gt;
+    &lt;!-- This covers the range 1920-2560, but I left off the upper bound so any truly huge monitors get sensible behaviour --&gt;
+    &lt;source srcset=&quot;320.jpg 0.43x, 480.jpg 0.64x, 640.jpg 0.86x, 960.jpg 1.29x, 1280 1.71x, 1920 2.57x&quot;&gt;
+&lt;/picture&gt;</pre>
+
+				<p> <span style="font-size: .5em; background-color: rgb(184,184,184); color: rgb(0,0,128) ">Press ctr+alt+del to reset standardization.</span></p>
+				</section>
+
+				<section>
 				
+				<iframe width="960" height="720" src="//www.youtube.com/embed/xdBcsdk8pEY" frameborder="0" allowfullscreen></iframe>
+
+				</section>
+
 				<section>
-					<h2>Picture</h2>
+					<h2>The <code>srcset</code> attribute</h2>
 				</section>
 
 				<section>
 					<h2>Example</h2>
-				</section>
-
-				<section>
-					<h2>The good</h2>
-				</section>
-
-				<section>
-					<h2>The bad</h2>
-				</section>
-
-				<section>
-					<h2>The ugly</h2>
-				</section>
-
-				<section>
-					<h2>srcset</h2>
-				</section>
-
-				<section>
-					<h2>Example</h2>
+<pre><code>
+&lt;img alt="The Breakfast Combo"
+  src="banner"
+  srcset="banner-HD 2x, 
+          banner-phone 100w, 
+          banner-phone-HD 100w 2x"&gt;</code></pre>
 				</section>
 
 				<section>
 					<h2>The good</h2>
 					<ul>
-						<li>Automatically resizes images to DPR.</li>
-					<ul>
+						<li class="fragment">Incremental improvement.</li>
+						<li class="fragment">Reuses existing element.</li>
+						<li class="fragment">Browser makers like it.</li>
+						<li class="fragment">Already in Webkit.</li> 
+						<li class="fragment">Automatically resizes images to DPR.</li>
+					</ul>
 				</section>
 
 				<section>
 					<h2>The bad</h2>
 					<ul>
-						<li>What the hell does "w" mean? "h"?</li>
-					<ul>
+						<li class="fragment">No art direction.</li>
+						<li class="fragment">No media type selection.</li>	
+					</ul>
 				</section>
 
 				<section>
 					<h2>The ugly</h2>
 					<ul>
-					<ul>
+						<li class="fragment">Syntax is confusing.</li>
+						<li class="fragment">Syntax is does "w" mean?</li>
+						<li class="fragment">Algorithm is counter intuitive.</li>
+						<li class="fragment">Users have browsers zoomed in.</li>
+					</ul>
 				</section>
 
 				<section>
@@ -303,41 +478,81 @@
 				</section>
 				
 				<section>
-					<h2>Client Hints</h2>
+					<h2>Client hints</h2>
+					<aside class="notes"> 
+						<ul>
+							<li>HTTP-based solution</li>
+						</ul>
+					</aside>
 				</section>
 				
-				<section>
-					<h2>Example</h2>
-				</section>
+				<section data-markdown>
+                    <script type="text/template">
+                        ## Example (HTTP headers)
+
+                         ```
+
+                        GET http://foo.org/image HTTP/1.1
+                        CH-DPR: 2.0
+                        CH-VW: 2.0
+                        CH-VH: 2.0
+                        CH-OtherVar: x.x
+                         
+                        ```
+                    </script>
+                </section>
 				
 				<section>
 					<h2>The good</h2>
+					<ul>
+						<li>No need to change markup</li>
+						<li>opt-in mechanism.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>3 Questions</h2>
+					<ol class="fragment">
+					<li class="fragment">Can you set HTTP headers on your site?</li>
+					<li class="fragment">Do you use Github pages or CDN?</li> 
+					<li class="fragment">Can you set HTTP headers on your site?</li>
+					</ol>
 				</section>
 
 				<section>
 					<h2>The bad</h2>
+					<ul>
+						<li class="fragment">Server-side only.</li>
+						<li class="fragment">Content negotiation.</li>
+						<li class="fragment">Not well suited for art direction.</li>
+					</ul>
 				</section>
 
 				<section>
 					<h2>The ugly</h2>
-					
+					<ul>
+						<li class="fragment">Proxies can strip data.</li>
+						<li class="fragment">Might require SSL to work reliably.</li>
+						<li class="fragment">Relies a lot on <code>Vary:</code></li>
+					</ul>
 				</section>
 
 				<section>
-				<h2>Yeah, it's all pretty much fucked.</h2>
+				<h2>So Yeah....</h2>
+				<p class="fragment">It's all pretty much $#@%!.</p>
 				</section>
 			
 				<section class="blackboard" data-background="images/blackboard.jpg">
-					<h2>Drawing board</h2>
+					
 <div class="blackboard">
 					<pre contenteditable class="drawingboard">
-&lt;picture width="" height="" src="foo.png"&gt;
-
-  &lt;source media="(min-width: 300px)" 
-	           srcset="small.jpg 1x, big.jpg 2x"&gt;
+&lt;picture alt="..." width="" height="" src="small.jpg"&gt;
 
   &lt;source media="(min-width: 600px)" 
-	           srcset="med.jpg 1x, large.jpg 2x"&gt;
+           srcset="medium-1.jpg 1x, medium-2.jpg 2x"&gt;
+
+  &lt;source media="(min-width: 1000px)" 
+           srcset="large-1.jpg 1x, large-2.jpg 2x"&gt;
 
   &lt;img src="small.jpg" alt="why is it so difficult?"&gt;
 
@@ -354,33 +569,143 @@
 				</section>
 
 				<section>
+				<h2>Simple Example</h2>
+				
+				<pre><code>&lt;img src="pic-small.jpg" alt="..."
+  src-1="(min-width: 400px) pic-medium.jpg"
+  src-2="(min-width: 1000px) pic-large.jpg"&gt;
+
+</code></pre>
+					<img src="images/difimages.jpg" alt="">
+				</section>
+				<section>
 					<h2>Respimg syntax</h2>
 <pre><code>
   &lt;src-n-attribute&gt; = &lt;media-query&gt;? [ &lt;x-based-urls&gt; | &lt;viewport-urls&gt; ]
+
 </code></pre>
 				</section>
 
-				<section>
-				<h2>Example</h2>
-				<pre><code>				
-&lt;img src-1="(max-width: 400px) pic-small.jpg"
-	src-2="(max-width: 1000px) pic-medium.jpg"
-	src="pic-large.jpg"
-	alt="Obama talking to a soldier in hospital scrubs."&gt;
-					</code></pre>
-					<img src="images/difimages.jpg" alt="">
-				</section>
 
 				<section>
 					<h2>The good</h2>
+					<ul>
+						<li>Addresses picture's problems.</li>
+						<li>Solves most use cases.</li>
+						<li>Handles multi coloum layouts.</li>
+					</ul>
 				</section>
+
 
 				<section>
 					<h2>The bad</h2>
+					<ul>
+						<li>Not easy to polyfill.</li>
+						<li>Doesn't solve for media type.</li>
+						<li>New scary microsyntax.</li>
+						<li>Not very forgiving (maybe good thing?).</li>
+						<li>Complicated.</li>
+					</ul>
 				</section>
+
 
 				<section>
 					<h2>The ugly</h2>
+					<p><img src="images/imagegrid.png" alt="multicoloum responsive layout"></p>
+					<ul>
+						<li>Viewport URLs</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>&lt;viewport-urls&gt; - simple </h2>
+					<pre><code>
+&lt;img src-1="
+
+100%; 
+
+pic1.png 160, pic2.png 320, pic3.png 640, pic4.png 1280, pic5.png 2560
+
+"&gt;
+					</code></pre>
+					
+
+				</section>
+
+				<section>
+					<h2>&lt;viewport-urls&gt; - fancy</h2>
+				<figure>
+				<svg height=200 width=800>
+					<style>
+					text { font-family: sans-serif; }
+					</style>
+					<g id=line transform="translate(0, 60)">
+						<text style="font-size: 30px" x=0 y=10>0</text>
+						<line stroke=black stroke-width=4 x1=30 x2=700 y1=0 y2=0></line>
+						<g transform="translate(250, 0)">
+							<line stroke=black stroke-width=4 x1=0 x2=0 y1=-10 y2=10></line>
+							<text style="font-size: 20px" text-anchor=middle x=0 y=-20>30em</text>
+							<text style="font-size: 20px" text-anchor=middle x=0 y=-45>Breakpoint 1</text>
+						</g>
+						<g transform="translate(500, 0)">
+							<line stroke=black stroke-width=4 x1=0 x2=0 y1=-10 y2=10></line>
+							<text style="font-size: 20px" text-anchor=middle x=0 y=-20>70em</text>
+							<text style="font-size: 20px" text-anchor=middle x=0 y=-45>Breakpoint 2</text>
+						</g>
+						<circle cx=715 cy=0 r=3></circle>
+						<circle cx=730 cy=0 r=3></circle>
+						<circle cx=745 cy=0 r=3></circle>
+						<text style="font-size: 30px" x=770 y=10>∞</text>
+					</g>
+					<g transform="translate(90, 80)">
+						<rect fill=#ddd height=80 stroke=gray stroke-width=2 width=100></rect>
+						<rect fill=blue height=30 width=30 x=65 y=25></rect>
+						<circle cx=40 cy=20 fill=green r=15></circle>
+						<polygon fill=red points="5 40, 40 75, 5 75"></polygon>
+						<text style="font-size: 16px" text-anchor=middle x=50 y=100>100px wide</text>
+					</g>
+					<g transform="translate(325, 80)">
+						<rect fill=#ddd height=80 stroke=gray stroke-width=2 width=100></rect>
+						<rect fill=blue height=30 width=30 x=65 y=25></rect>
+						<circle cx=40 cy=20 fill=green r=15></circle>
+						<polygon fill=red points="5 40, 40 75, 5 75"></polygon>
+						<text style="font-size: 16px" text-anchor=middle x=50 y=100>400px wide</text>
+					</g>
+					<g transform="translate(575, 80)">
+						<rect fill=#ddd height=80 stroke=gray stroke-width=2 width=100></rect>
+						<rect fill=blue height=30 width=30 x=65 y=25></rect>
+						<circle cx=40 cy=20 fill=green r=15></circle>
+						<polygon fill=red points="5 40, 40 75, 5 75"></polygon>
+						<text style="font-size: 16px" text-anchor=middle x=50 y=100>50% of the viewport width wide</text>
+					</g>
+				</svg>
+					<figcaption><small>Illustration of three image sizes at different layouts, separated by breakpoints.- <cite>
+						<a href="http://tabatkins.github.io/specs/respimg/Overview.html#viewport">
+							Tab Atkins
+						</a></cite></small> </figcaption>
+				</figure>
+				</section>
+
+				<section>
+					<h2>Viewport URL</h2>
+					<h3> <code> 100 30em 400 70em 50%; </code> </h3>
+					<pre><code>
+&lt;img src-1="
+
+   100 30em 400 70em 50%;
+
+    pic50.png 50, pic100.png 100, pic200.png 200,
+    pic400.png 400, pic800.png 800, pic1600.png 1600,
+    pic3200.png 3200"&gt;
+					</code></pre>
+				</section>
+
+				<section data-background-image="images/SprayPray.png">
+					
+				</section>
+				
+				<section>
+					<h2><span>Soo...</span> <span class="fragment">um...yeah...</span></h2>
 				</section>
 
 				<section>
@@ -397,9 +722,9 @@
                 <section>
                 	<h2>How does it work?</h2>
                     <ul>
-                        <li class="fragment">File format approach</li>
-                        <li class="fragment">A "layer" per resolution</li>
-                        <li class="fragment">Both resolution switching and art-direction</li>
+                        <li class="fragment">Filed-based approach.</li>
+                        <li class="fragment">A "layer" per resolution.</li>
+                        <li class="fragment">Handles resolution switching and art-direction.</li>
                     </ul>
                 </section>
                 <section>
@@ -417,11 +742,15 @@
                     <img src="images/res_switch.png_layer2-bw.png">
                 </section>
                 <section>
+                	<h2>Delta 1 - composed</h2>
+                    <img src="images/res_switch_shrink.png" width="400" height="221">
+                </section>
+                <section>
                 	<h2>Delta 2 (+8kb)</h2>
                     <img src="images/res_switch.png_layer3-bw.png">
                 </section>
                 <section>
-                	<h2>Delta 3</h2>
+                	<h2>Delta 2 - composed</h2>
 					<img src="images/res_switch_shrink.png">
                 </section>
                 <section>
@@ -452,83 +781,127 @@
                 <section>
                     <h3>The good</h3>
                     <ul>
-                        <li class="fragment">Markup left untouched</li>
-                        <li class="fragment">A single file per image</li>
-                        <li class="fragment">Better for post-download dimensions changes</li>
+                        <li class="fragment">Markup left untouched.</li>
+                        <li class="fragment">A single file per image.</li>
+                        <li class="fragment">Better for post-download dimensions changes.</li>
                     </ul>
-                    <aside class="notes">
-                        <p>No markup</p>
-                        <p>single file</p>
-                        <p>can download diff</p>
-                    </aside>
                 </section>
                 <section>
                     <h3>The bad</h3>
                     <ul>
-                        <li class="fragment">Touches many layers. Will take time</li>
-                        <li class="fragment">Decoding performance???</li>
-                        <li class="fragment">Fetching mechanism network performance???</li>
+                    	<li class="fragment">New file format.</li>
+                        <li class="fragment">Requires significant changes in browsers.</li>
+                        <li class="fragment">Decoding performance.</li>
+                        <li class="fragment">Custom fetching mechanism.</li>
                     </ul>
-                    <aside class="notes">
-                        <p>complicated</p>
-                        <p>decoding perf?</p>
-                        <p>Fetching mechanism</p>
-                    </aside>
-                </section>				
-				<section>
-					<h2>Responsive Image Format</h2>
-				</section>
+                </section>
+                <section>
+					<h3>The ugly</h3>
+					<ul>
+						<li>It will need tools.</li>
+						<li>Probably require HTTP 2.0.</li>
+						<li>Probably an IPR nightmare.</li>
+						<li>Needs to be standardized.</li>
+					</ul>
+                </section>
+                <section data-background="images/crystal_ball.jpg"
+						 data-background-size="632px"
+						 data-background-color="black">
+             	</section>
+                <section data-background="images/scifi.jpg"
+             			 data-background-size="632px">
+                </section>
 				<section>
 					<h2>What can you do today?</h2>
 				</section>
 				<section>
 					<h2>Compress your images (d'uh!)</h2>
 				</section>
-				<section data-background="">
-					<aside>						
+				<section data-background="images/image_compression.png">
+					<aside class="notes">						
 						<p><a href="http://www.html5rocks.com/en/tutorials/speed/img-compression/">Image compression tutorial</a></p>
 					</aside>
 				</section>
+				
+				<section>
+					<h2>Lazy?<span class="fragment">... like me.</span></h2>
+					<h3 class="fragment">Use a CDN or server-side tech.</h3>
+				</section>
+
 				<section>
 					<h2>Compressive images</h2>
+					<img src="images/compressive.png">
+					<p><small><a href="Retina revolution - Netvlies Internetdiensten">Daan Jobsis</a></small></p>
 				</section>
-				<section data-background="images/image_compression.png">
-					
-				</section>
+
 				<section>
 					<h2>Secret Recipe</h2>
 					<ol>
+						<li class="fragment">Take a long hard look at yourself.</li>
 						<li class="fragment">Take full size image.</li>
 						<li class="fragment">Set compression to 0.</li>
 						<li class="fragment">set it in place and let the browser resize it.</li>
 						<li class="fragment">Adjust size - got to step 1.</li>
+						<li class="fragment">Test!!!</li>
 					</ol>
 				</section>
+
 				<section>
-					<h2>Side by side</h2>
+					<h2>Side-by-side</h2>
 					<img src="images/compressive_side_by_side.jpg">
 				</section>
+				<section data-background-image="images/compressive_0.png">
+					
+				</section> 
 				<section>
 					<h2>Picturefill</h2>
+					<p>
+						<a href="https://github.com/scottjehl/picturefill">
+							<img src="images/picturefill.png">
+						</a>
+					</p>
 				</section>
+
 				<section>
-					<h2>x-picture</h2>
+					<h2>Other solutions</h2>
+					<p><a href="http://css-tricks.com/which-responsive-images-solution-should-you-use/"><img src="images/css-tricks.png" alt="css-tricks website has the solutions!"></a></p>
 				</section>
+
 				<section>
-					<h2>Join the RICG</h2>	
+					<h2>Join the RICG</h2>
+					<img src="images/site_v3.png" alt="responsiveimages.org">
+					<h2><a href="http://responsiveimages.org">responsiveimages.org</a></h2>	
+				</section>
+
+				<section>
+                    <h2>Sizer Soze</h2>
+                    <p><img src="images/sizerSoze-savings.png"></p>
+                    <h3>Up to<sup>*</sup> 72% image data savings.</h4>
+                    <small><a href="http://timkadlec.com/2013/06/why-we-need-responsive-images/">tkadlec.com</a></small>
+                    <aside class="notes">
+                        A small utility Yoav cooked up and Tim Kadlec wrote about showed 72% data savings.
+                    </aside>
+                </section>
+				
+				<section>
+					<h2>x-picture (x-src-n?)</h2>
 				</section>
 				<section>
 					<h2>Thanks!</h2>
 					<ul>
-						<li>Shout out to Yoav Weiss for the RIC images.</li>
+						<li>Thanks to Yoav Weiss for the RIC images + slides.</li>
 					</ul>
 					<ul>
-						<li>marcos@marcosc.com</li>
-						<li>@marcosc</li>
-						<li>marcosc.com</li>
+						<li>Github: <a href="github.com/marcoscaceres">marcoscaceres</a></li>
+						<li>twitter: <a href="https://twitter.com/marcosc">@marcosc</a></li>
 					</ul>
+					<hr>
 					<ul>
-						<li><a href="http://www.flickr.com/photos/gillettk/">Glass ceiling</a> - K Gillett<li>
+						<li>Image credits..
+						<ul>
+						<li><a href="http://www.flickr.com/photos/gillettk/">Glass ceiling</a> - K Gillett</li>
+						<li>Scifi cover, picture taken by <a href="http://www.flickr.com/photos/28348954@N00/">erik_mona</a>
+							<ul>
 					</ul>
 				</section>
 			</div>
@@ -551,12 +924,15 @@
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
+
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					
+
 				]
 			});
 		</script>
